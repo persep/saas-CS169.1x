@@ -5,11 +5,11 @@ module FunWithStrings
   end
 
   def count_words
-    words = self.split
+    s = self.gsub(/[^\w\s]/, '')  # anything that is NOT a word character OR a space character.
+    words = s.downcase.split
     words_freq = Hash.new(0)
     words.each { |word|
-      clean_words = word.gsub(/\W/, '').downcase
-      words_freq[clean_words] += 1 if clean_words != ''
+      words_freq[word] += 1
     }
     words_freq
   end
