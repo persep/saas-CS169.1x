@@ -24,6 +24,7 @@ class RockPaperScissors
   end
 
   def self.tournament_winner(tournament)
+    # http://stackoverflow.com/questions/9540766/manipulating-arrays-with-recursive-function/12915928
   	if(tournament[0][0].is_a? String)
   		RockPaperScissors.winner(tournament[0],tournament[1])
   	else
