@@ -19,7 +19,7 @@ class Class
     class_eval %Q{
     	# http://paul-wong-jr.blogspot.com.es/2012/04/ruby-metaprogramming-with-classeval.html
     	
-    	def #{attr_name}=attr_name
+    	def #{attr_name}=attr_value
   
     		# An attribute's initial value is always nil by default.
     		# The very first time the attribute receives a value, 
@@ -29,9 +29,9 @@ class Class
     		@#{attr_name+"_history"} = [] unless @#{attr_name+"_history"}
     		@#{attr_name+"_history"} << @previous
     		
-    		@#{attr_name} = attr_name # setter update
+    		@#{attr_name} = attr_value # setter update
     		
-    		@previous = attr_name # update with new value
+    		@previous = attr_value # update with new value
     	end
     }
   end
